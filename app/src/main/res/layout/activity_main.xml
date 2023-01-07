@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStartActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显式启动activity " />
+
+    <Button
+        android:id="@+id/btnStartActivityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="隐式启动activity " />
+
+    <Button
+        android:id="@+id/btnStartActivityWithData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动activity并传递数据" />
+
+    <Button
+        android:id="@+id/btnStartActivityResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动activity并返回数据" />
+
+</LinearLayout>
