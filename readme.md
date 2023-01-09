@@ -880,7 +880,9 @@ findViewById(R.id.btnStartActivityResult).setOnClickListener(this);
     }
 
 ```
+
 ### SecondActivity.java
+
 ```java
 public class SecondActivity extends AppCompatActivity {
 
@@ -906,4 +908,52 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 }
+```
+
+### Button 点击事件
+
+1. 直接注册点击监听事件：
+   - 如下：直接声明button然后注册点击监听；重写onClick()方法处理点击事件。
+
+```java
+        Button button = findViewById(R.id.btnBackData);
+//        Button btnShowCount = findViewById(R.id.btnShowCount);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent();
+                intent1.putExtra("data_return","I am from SecondActivity");
+                setResult(RESULT_OK,intent1);
+                finish();
+            }
+        });
+
+```
+
+1. 在xml中添加onClick属性
+
+- 如下：先在Button按钮处添加onClick属性
+
+```xml
+<Button
+        android:id="@+id/btnShowCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showToast"
+        android:text="Show Count"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+```
+
+- 在Activity中创建showToast()方法。
+```java
+ public void showToast(View view) {
+        count++;
+        Toast toast = Toast.makeText(this,"the count is " + count , Toast.LENGTH_SHORT);
+        toast.show();
+        }
 ```
