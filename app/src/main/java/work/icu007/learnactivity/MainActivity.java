@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnStartActivityName).setOnClickListener(this);
         findViewById(R.id.btnStartActivityResult).setOnClickListener(this);
         findViewById(R.id.btnStartActivityWithData).setOnClickListener(this);
+        findViewById(R.id.btnStartLearnLayout).setOnClickListener(this);
 
 
 
@@ -120,6 +121,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
 //                startActivityForResult(intent,1);
                 launcher.launch(intent);
+                break;
+            case R.id.btnStartLearnLayout:
+                Intent startActivityIntent = new Intent(MainActivity.this,LearnLayout.class);
+                startActivity(startActivityIntent);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());
